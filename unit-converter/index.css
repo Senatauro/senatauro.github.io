@@ -1,0 +1,62 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.top{
+    height: 260px;
+    padding: 52px;
+    padding-top: 10px;
+    background: linear-gradient(246.26deg, #585DFE 0%, #FB3796 100%);
+    text-align: center;
+}
+
+.top h3{
+    font-style: normal;
+    font-weight: 800;
+    
+    font-size: 22px;
+    line-height: 38px;
+    /* identical to box height, or 173% */
+
+    text-align: center;
+    letter-spacing: -0.05em;
+    color: white;
+}
+
+#number-input {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    border: 5px #D2D2D2 dotted;
+    width: 100%;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 98px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    -moz-appearance: textfield;
+}
+
+#number-input::-webkit-outer-spin-button,
+#number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.info-panel{
+    padding: 37px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    color: white;
+    background: #1F2937;
+}
+
+.info-panel p{
+    color: #D2D2D2;
+}
+
+.info-panel h3{
+ margin-top: 27px;
+}
