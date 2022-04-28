@@ -1,0 +1,68 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+        <title> Random Password Generator! </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main class="main-content">
+            <header>
+                <h1>Generate a <span class="animatedColor">random password!</span></h1>
+                <h3>Never use an insecure password again!</h3>
+                
+                <div class="header-buttons">
+                    <button class="passgen-button" onclick="GeneratePassword()">
+                        <img src="images/lightning.png" class="passgen-icon">
+                        <p class="passgen-txt">Generate passwords!</p>
+                    </button>
+                    <button class="filter-button" onclick="ShowFilters()">
+                        <img src="images/filter.png" class="passgen-icon" width="20px">
+                        <p class="passgen-txt">Filters</p>
+                    </button>
+                </div>
+                
+                <div class="filters" id="filters">
+                    <p class="filters-p"> Lenght </p>
+                    <input class="filters-input" id="filters-input" type="number" oninput="ChangeLenght(this)" value="8">
+                    <!--
+                    <select name="cars" id="cars">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                    -->
+                </div>
+            
+            <header>
+            
+            <hr />
+                
+            <div>
+                <div class="passwords">
+                    <input type="text" class="pass-inp" id="pass1" onclick="CopyPassword(this)" readonly value="...">
+                        
+                    </input>
+                    <input type="text" class="pass-inp" id="pass2" onclick="CopyPassword(this)" readonly value="...">
+                        
+                    </input>
+                    <input type="text" class="pass-inp" id="pass3" onclick="CopyPassword(this)" readonly value="...">
+                        
+                    </input>
+                    <input type="text" class="pass-inp" id="pass4" onclick="CopyPassword(this)" readonly value="...">
+                        
+                    </input>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p class="animatedColor"> Made with ♥ by Carlos Gabriel Silva Stedile </p>
+        </footer>
+        <script src="index.js"></script>
+    </body>
+</html>
