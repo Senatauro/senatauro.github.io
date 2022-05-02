@@ -1,0 +1,189 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Text Related */
+
+h1, h2{
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+
+.t-pad-top{
+    padding-top: 50px;
+}
+
+.t-pad-bot{
+    padding-bottom: 50px;
+}
+
+.t-accent{
+    color: #10B981;
+}
+
+.t-block{
+    display: block;
+}
+
+.t-little-bigger{
+    font-size: 30px;
+}
+.t-bigger{
+    font-size: 80px;
+}
+
+.t-bold{
+    font-weight: 500;
+}
+
+.portfolio{
+    animation: ChangeColor 15s infinite alternate;
+}
+
+.jumpLetter{
+    position: relative;
+}
+
+/* Link related */
+
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #10B981;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover, .btn:focus{
+    background: #252525;
+}
+
+
+
+/* Image related */
+
+
+.profile-pic{
+    display: block;
+    width: 200px;
+    margin: auto;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-bottom: 25px;
+}
+
+.portfolio-img{
+    width: 200px;
+    height: 300px;
+    margin: auto;
+    border: #fff 3px solid;
+    border-radius: 5px;
+    margin-right: 25px;
+    object-fit: cover;
+}
+
+/* Section related */
+
+.container{
+    padding: 100px 0;
+    width: 700px;
+    margin: auto;
+}
+
+.portfolio-div{
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.footer-class{
+    padding: 10px 0;
+}
+
+
+/* Color related */
+
+.brd-up{
+    border-top: 1px solid #252525;
+}
+
+.brd-down{
+    border-bottom: 1px solid #252525;
+}
+
+.brd-white{
+    border-color: #fff;
+}
+
+.t-white{
+    color: white;
+}
+
+.t-black{
+    color: #252525;
+}
+
+.bg-black{
+    background: #252525;
+}
+
+.bg-white{
+    background: #fff;
+}
+
+/*#252525*/
+
+
+/* Animations */
+@keyframes ChangeColor {
+    0%{
+        color: #6B7280;
+    }
+    10% {
+        color: #10B981;
+    }
+    20%{
+        color: #0EA5E9;
+    }
+    30%{
+        color: #8B5CF6;
+    }
+    40%{
+        color: #F43F5E;
+    }
+    50%{
+        color: #F59E0B;
+    }
+    60%{
+        color: #F43F5E;
+    }
+    70%{
+        color: #8B5CF6;
+    }
+    80%{
+        color: #0EA5E9;
+    }
+    90% {
+        color: #10B981;
+    }
+    100%{
+        color: #6B7280;
+    }
+}
+
+@keyframes Jump {
+    0% { bottom: 0em;}
+    30% { bottom: 0.2em; }
+    100% { bottom: 0;}
+}

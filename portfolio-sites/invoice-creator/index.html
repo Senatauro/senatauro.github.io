@@ -1,0 +1,85 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+        <title> A Invoice Creator! </title>
+    </head>
+    <body id="body">
+        
+        <div class="area" >
+            <ul id="squares">
+            </ul>
+        </div >
+        
+        <main class="receipt" id="receipt">
+            <header>
+                <h1> Invoice Creator! </h1>
+                <h4> Thanks for choosing 
+                    <span class="coloredText">
+                        <!-- Spam of spans -->
+                        <span>S</span><span>e</span><span>n</span><span>a</span><span>t</span><span>a</span><span>u</span><span>r</span><span>i</span>
+                        WebDev
+                    <span> 
+                </h4>
+            </header>
+            
+            <div>
+                <div class="buttons-div">
+                    <button onclick="AddTask(0)">WebDev: $10 </button>
+                    <button onclick="AddTask(1)">Backend: $20</button>
+                    <button onclick="AddTask(2)">Consultancy: $30 </button>
+                </div>
+                <div class="task-header">
+                    <p class="left-p">TASK </p>
+                    <p class="right-p">TOTAL</p>
+                </div>
+                <div id="task-div">
+                    
+                    <!--
+                    <div class="task">
+                        <h3>WebSite</h3>
+                        <button> Remove</button>
+                        <p> $10</p>
+                    </div>
+                    <div class="task">
+                        <h3>WebSite</h3>
+                        <button> Remove</button>
+                        <p> $10</p>
+                    </div>
+                    <div class="task">
+                        <h3>WebSite</h3>
+                        <button> Remove</button>
+                        <p> $10</p>
+                    </div>
+                    -->
+                </div>
+                
+                <hr/>
+                
+                
+                <div class="notes-div">
+                    <div class="notes-header">
+                        <h4 class="left-p">NOTES</h4>
+                        <h4 class="right-p">TOTAL AMOUNT </h4>
+                    </div>
+                    <div class="notes-info">
+                        <p> We accept cash, credit card, or PayPal </p>
+                        <h2 id="total-el"> $0 </h2>
+                    </div>
+                </div>
+            <div>
+            <button id="sendInvoice-btn" onclick="SendInvoice()"> <img src="img/email.png" width="16px"> Download Invoice </button>
+        </main>
+        <footer>
+            <p> Made with love by </p>
+            <p class="coloredText">
+            <span>C</span><span>a</span><span>r</span><span>l</span><span>o</span><span>s</span>  <span>G</span><span>a</span><span>b</span><span>r</span><span>i</span><span>e</span><span>l</span> <span>S</span><span>i</span><span>l</span><span>v</span><span>a</span>  <span>S</span><span>t</span><span>e</span><span>d</span><span>i</span><span>l</span><span>e</span><span>❤️</span>
+            </p>
+        </footer>
+        
+        <script src="index.js"></script>
+    </body>
+</html>
