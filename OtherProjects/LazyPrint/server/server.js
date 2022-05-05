@@ -1,12 +1,14 @@
 require("dotenv").config();
 const express = require("express");
+const https = require("https");
+const fileUpload = require("express-fileupload");
 const bodyParser = require("body-parser");
 const { v4: uuid } = require("uuid");
 const cors = require("cors");
 const app = express();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const endpointSecret = "evt_3KvUmmHhGa1npZY90OJ6TwKz";
-
+const fs = require('fs');
 /* Req received from client
 let lazyPrintInfo = {
   email: "",
@@ -18,13 +20,39 @@ let lazyPrintInfo = {
 */
 
 app.use(express.json());
-
+app.use(fileUpload());
 app.use(cors());
 
-const YOUR_DOMAIN = "http://localhost:4242";
+
+
+app.get('/', (req, res) => {
+  console.log("GET request received");
+  res.send('Hello HTTPS!')
+})
+
+app.post("/upload", (req, res) => {
+  console.log(req.body);
+  if (!req.files) {
+    console.log("No files were uploaded.")
+  }
+  console.log("File Received");
+
+  //Save file to the tempFiles folder
+  const file = req.files.file;
+  const fileName = uuid() + ".pdf";
+})
 
 app.post("/create-checkout-session", async (req, res) => {
   console.log(req.body);
+
+  if (!req.files) {
+    console.log("No files were uploaded.")
+    // return error
+    return res.status(400).json({
+      error: "No files were uploaded."
+    });
+  }
+  console.log("File Received");
 
   let productData = [];
   productData.push({
@@ -52,9 +80,22 @@ app.post("/create-checkout-session", async (req, res) => {
       quantity: req.body.numPagesBlackWhite,
     });
   }
-
   guid = uuid();
   console.log(guid);
+  
+  /* Save the file to the tempFiles folder with the guid name */
+  const file = req.files.file;
+  const fileName = guid + ".pdf";
+  fs.writeFile(`./tempFiles/${fileName}`, file.data, (err) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({
+        error: "Error saving file"
+      });
+    }
+    console.log("File saved successfully!");
+  });
+  
   const session = await stripe.checkout.sessions.create({
     line_items: productData,
     mode: "payment",
@@ -65,7 +106,7 @@ app.post("/create-checkout-session", async (req, res) => {
     cancel_url: `http://127.0.0.1:5500/cancel.html`,
   });
 
-  res.json({ url: session.url });
+  //res.json({ url: session.url });
 });
 
 app.post(
@@ -80,4 +121,9 @@ app.post(
   }
 );
 
-app.listen(4242, () => console.log("Running on port 4242"));
+//app.listen(4242, () => console.log("Running on port 4242"));
+
+https.createServer({
+  key: fs.readFileSync('./ssl/cert.key'),
+  cert: fs.readFileSync('./ssl/cert.pem')
+}, app).listen(4242, () => console.log("Running on port 4242"));

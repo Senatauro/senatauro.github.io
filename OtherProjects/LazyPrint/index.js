@@ -30,10 +30,10 @@ let pricePerCol = 0.5;
 let PDFSelected;
 let PDFObject;
 
+let base64 = "";
 let lazyPrintInfo = {
     email: "",
     pickup: "",
-    base64: "",
     numPagesBlackWhite: 0,
     numPagesColored: 0,
 };
@@ -45,10 +45,8 @@ async function FileSelected(input) {
     PDFSelected = input.files[0];
 
     /* Load The PDFSelected to the PDFObject using PDFjs */
-    let base64 = await LoadPDF(PDFSelected);
+    base64 = await LoadPDF(PDFSelected);
 
-    /* Load the information into the lazyPrintInfo */
-    lazyPrintInfo.base64 = base64;
     let prom = [];
     /* foreach page, check if colored */
     for (let i = 0; i < 1; i++) {
@@ -97,17 +95,27 @@ function Pay() {
         return;
     }
 
-    console.log(JSON.stringify(lazyPrintInfo));
+    //console.log(JSON.stringify(lazyPrintInfo));
 
-    alert("Thank you for your purchase!");
-    fetch("http://54.173.61.175:4242/create-checkout-session", {
+    //Upload the PDF base64 file to the server
+    let formData = new FormData();
+    formData.append("file", PDFSelected);
+    formData.append("email", lazyPrintInfo.email);
+    formData.append("pickup", lazyPrintInfo.pickup);
+    formData.append("numPagesBlackWhite", lazyPrintInfo.numPagesBlackWhite);
+    formData.append("numPagesColored", lazyPrintInfo.numPagesColored);
+    console.log(formData);
+    
+    /*fetch("http://localhost:4242/upload", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify(lazyPrintInfo),
+        body: formData
+    }).then(response => {
+        console.log(response);
+    })*/
+
+    fetch("https://nosdesign.com.br:4242/create-checkout-session", {
+        method: "POST",
+        body: formData,
     }).then(res => {
         console.log(res);
         if(res.ok) {
