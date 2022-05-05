@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LazyPrint - Solving your printing problems!</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
+        <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+
+    </head>
+
+    <body>
+        <div class="background-effect" >
+            <ul id="squares">
+            </ul>
+        </div >
+        
+        
+        <main>
+            <header>
+                <div class="info">
+                    <div class="info-item">
+                        <h2 class="t-bold t-black">0</h2>
+                        <p class="t-small t-thin">Works concluded</p>
+                    </div>
+                    <div class="info-item">
+                        <h2 class="t-bold t-black">0</h2>
+                        <p class="t-small t-thin">Hours worked</p>
+                    </div>
+                </div>
+            </header>
+
+
+            <div class="container" id="page-one">
+                <h1 class="t-center animated-text t-bigger">
+                    <span class="jumping-text">L</span><span class="jumping-text">a</span><span class="jumping-text">z</span><span class="jumping-text">y</span>Print
+                </h1>
+
+                <div class="instructions">
+                    <h2 class="t-black t-thin t-center">How to use LazyPrint</h2>
+
+                    <ol class="t-thin t-small">
+                        <li>
+                            Upload the file you want to print
+                        </li>
+                        <li>
+                            Choose your payment method and pay
+                        </li>
+                        <li>
+                            Wait 24h after the payment and collect your printed pages!
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- FILE INPUT -->
+
+                <label for="file-input" class="file-input-label">
+                    <img src="imgs/Icons/upload.png" width="24px">
+                    Select your PDF!
+                    <input type="file" id="file-input" accept=".pdf" onchange="FileSelected(this)" />
+                </label>
+
+
+                <div class="service-info">
+                    <p class="t-thin t-grey">
+                        Services
+                    </p>
+                    <p class="t-thin t-grey">
+                        Total
+                </div>
+                
+                <div class="service-info">
+                    <p class="t-bold" id="bw-pages-el">
+                        ? black and white
+                    </p>
+                    <p class="t-thin t-grey" id="bw-price-pages-el">
+                        € 0,25 per B&W page
+                    </p>
+                </div>
+                
+                <div class="service-info">
+                    <p class="t-bold" id="col-pages-el">
+                        ? colored pages
+                    </p>
+                    <p class="t-thin t-grey" id="col-price-pages-el">
+                        € 0,50 per colored page
+                    </p>
+                </div>
+
+                <div class="service-info">
+                    <p class="t-bold">
+                        Delivery <span class="t-thin t-small">in 24h</span> <spam class="t-little t-thin">(working days)</spam>
+                    </p>
+                    <p class="t-thin t-grey">
+                        € 1,50
+                    </p>
+                </div>
+                
+                <hr>
+
+                <div class="service-info">
+                    <p>Total Amount </p>
+                    <p class="t-thin t-grey" id="total-el">
+                        
+                    </p>
+                </div>
+
+                <button class="pay-button t-bold t-white t-little-bigger" onclick="Proceed()">
+                    Proceed
+                </button>
+            </div>
+
+            <div class="container" id="page-two">
+                <h1 class="t-center animated-text t-bigger">
+                    <span class="jumping-text">L</span><span class="jumping-text">a</span><span class="jumping-text">z</span><span class="jumping-text">y</span>Print
+                </h1>
+
+                <div class="information">
+                    <p>Your E-mail <spam class="t-small t-thin t-grey">(Used to receive your pickup code)</spam></p>
+                    <input type="email" id="email-input" class="data-input" placeholder="Type your email here" />
+                </div>
+
+                <div class="information">
+                    <p>Your pickup code</p>
+
+                    <select id="pickup-points" name="points" class="data-input" onselect="PickupChanged(this)">
+                        <option value="p1">p1</option>
+                        <option value="p2">p2</option>
+                        <option value="p3">p3</option>
+                        <option value="p4">p4</option>
+                    </select>
+                </div>
+
+                <div class="information">
+                    <h2 class="t-center t-thin">Review your cart</h2>
+                </div>
+
+                <div class="service-info">
+                    <p class="t-grey t-thin">
+                        Services
+                    </p>
+                    <p class="t-thin t-grey">
+                        Total
+                    </p>
+                </div>
+
+                <div class="service-info">
+                    <p class="t-bold" id="review-bw-pages-el">
+                        10 pages
+                    </p>
+                    <p class="t-thin t-grey" id="review-bw-price-pages-el">
+                        € 5,00
+                    </p>
+                </div>
+
+                <div class="service-info">
+                    <p class="t-bold" id="review-col-pages-el">
+                        10 pages
+                    </p>
+                    <p class="t-thin t-grey" id="review-col-price-pages-el">
+                        € 5,00
+                    </p>
+                </div>
+
+                <div class="service-info">
+                    <p class="t-bold">
+                        Delivery <span class="t-thin t-small">in 24h</span> <spam class="t-little t-thin">(working days)</spam>
+                    </p>
+                    <p class="t-thin t-grey">
+                        € 1,50
+                    </p>
+                </div>
+
+                <div class="service-info">
+                    <p class="t-thin t-grey">
+                        Total Amount
+                    </p>
+                    <p class="t-thin" id="review-total-el">
+                        € 6,50
+                    </p>
+                </div>
+
+                <button class="pay-button t-bold t-white t-little-bigger" onclick="Pay()">
+                    Pay
+                </button>
+            </div>
+        </main>
+
+    </body>
+    <script src="index.js"></script>
+</html>
