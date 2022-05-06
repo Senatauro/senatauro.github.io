@@ -49,7 +49,7 @@ async function FileSelected(input) {
 
     let prom = [];
     /* foreach page, check if colored */
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < PDFObject.numPages; i++) {
         let page = await PDFObject.getPage(i + 1);
         prom.push(CheckIfColored(page));
     }
@@ -113,7 +113,7 @@ function Pay() {
         console.log(response);
     })*/
 
-    fetch("https://nosdesign.com.br:4242/create-checkout-session", {
+    fetch("https://localhost:4242/create-checkout-session", {
         method: "POST",
         body: formData,
     }).then(res => {
