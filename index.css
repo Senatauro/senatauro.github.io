@@ -105,6 +105,7 @@ h1, h2{
 .portfolio-div{
     display: flex;
     margin-bottom: 25px;
+    justify-content: center;
 }
 
 .footer-class{

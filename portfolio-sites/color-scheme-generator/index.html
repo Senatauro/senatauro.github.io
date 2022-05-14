@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="index.css" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+        <title>The Color Scheme Generator!</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="header-color-container">
+                <input type="color" class="main-color-selector" id="main-color-selector" value="#ad4141">
+                <select name="color-scheme" class="main-color-scheme" id="color-scheme">
+                    <option value="monochrome">Monochrome</option>
+                    <option value="monochrome-dark">Monochrome-dark</option>
+                    <option value="monochrome-light">Monochrome-light</option>
+                    <option value="analogic">Analogic</option>
+                    <option value="complement">Complement</option>
+                    <option value="analogic-complement">Analogic-complement</option>
+                    <option value="triad">Triad</option>
+                </select>
+            </div>
+            <div class="title">
+                <p>The</p>
+                <h1 class="t-bold t-big"> <span class="selectedColor">Color</span><span class="t-extra-light">Scheme</span></h1>
+                <h2 class="t-regular">Creator!</p>
+            </div>
+
+            <div class="header-container-get">
+                <button class="header-container-get-btn" id="generate-btn">Get Color Scheme</button>
+            </div>
+        </header>
+
+        
+        <main>
+            <ul class="color-list">
+                <li class="color-element-item" style="z-index: 10;">
+                    <p class="text-transparent t-big t-bold">None yet</p>
+                    <div class="color-info">
+                        <h3>#000000</h3>
+                    </div>
+                </li>
+                <li class="color-element-item" style="z-index: 9;">
+                    <p class="text-transparent t-big t-bold">None yet</p>
+                    <div class="color-info">
+                        <h3>#000000</h3>
+                    </div>
+                </li>
+                <li class="color-element-item" style="z-index: 8;">
+                    <p class="text-transparent t-big t-bold">None yet</p>
+                    <div class="color-info">
+                        <h3>#000000</h3>
+                    </div>
+                </li>
+                <li class="color-element-item" style="z-index: 7;">
+                    <p class="text-transparent t-big t-bold">None yet</p>
+                    <div class="color-info">
+                        <h3>#000000</h3>
+                    </div>
+                </li>
+                <li class="color-element-item" style="z-index: 6;">
+                    <p class="text-transparent t-big t-bold">None yet</p>
+                    <div class="color-info">
+                        <h3>#000000</h3>
+                    </div>
+                </li>
+                <li class="color-element-item" style="z-index: 5;">
+                    <p class="text-transparent t-big t-bold">None yet</p>
+                    <div class="color-info">
+                        <h3>#000000</h3>
+                    </div>
+                </li>
+            </ul>
+        </main>
+
+        <script type="module" src="index.js"></script>
+    </body>
+</html>
