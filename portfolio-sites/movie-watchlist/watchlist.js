@@ -10,16 +10,12 @@ function init_watchlist() {
 }
 
 function AddToWatchlist(filmId) {
-    try{
-        if (!watchlist.includes(filmId)) {
+    if (watchlist == null)
+        watchlist = [];
+    if (!watchlist.includes(filmId)) {
             watchlist.push(filmId);
             SetLocalStorageJSON("watchlist", watchlist);
         }
-    } catch (e) {
-        watchlist = []
-        watchlist.push(filmId);
-        SetLocalStorageJSON("watchlist", watchlist);
-    }
 }
 
 function RemoveWatchlist(filmId) {
