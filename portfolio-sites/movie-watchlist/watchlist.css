@@ -263,3 +263,7 @@ header{
     font-weight: bold;
     transition: all 0.3s ease-in-out;
 }
+
+.link:hover{
+    cursor: pointer;
+}

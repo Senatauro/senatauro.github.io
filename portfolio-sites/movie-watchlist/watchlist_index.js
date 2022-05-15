@@ -1,8 +1,21 @@
 import { init_watchlist, GetWatchlist, ContainsInWatchlist, RemoveWatchlist } from "./watchlist.js";
 import { GetFilmID } from "./films.js";
+import { CopyToClipboard } from "./utils.js";
 
 /* Variables */
 const filmsContainerEl = document.getElementById("films-container");
+const shareEl = document.getElementById("share");
+const titleEl = document.getElementById("title");
+
+/* Listeners */
+
+shareEl.addEventListener("click", () => {
+    const w = GetWatchlist();
+    CopyToClipboard(window.location + "?watchlist=" + w.join(","));
+    shareEl.querySelector(".link").textContent = "Copied!"
+});
+
+/* Listeners */
 
 /* Functions */
 
@@ -38,6 +51,10 @@ function AddWatchlistFunction(div, filmId) {
     })
 }
 
+function ClearFilms() {
+    filmsContainerEl.innerHTML = "";
+}
+
 function RenderFilm(film) {
     const div = film.getFilmHTML()
     filmsContainerEl.append(div);
@@ -49,10 +66,27 @@ function RenderFilm(film) {
 
 
 init_watchlist()
-let ids = GetWatchlist();
 
-ids.forEach(async (id) => {
-    let film = await GetFilmID(id);
-    let div = RenderFilm(film);
-    AddWatchlistFunction(div, id)
-})
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+if (urlParams.get("watchlist") != null) {
+    ClearFilms();
+    titleEl.textContent = "A Watchlist";
+    shareEl.classList.add("hidden");
+    let filmIds = urlParams.get("watchlist");
+    filmIds.split(",").forEach(async (id) => {
+        let film = await GetFilmID(id);
+        let div = RenderFilm(film);
+        AddWatchlistFunction(div, id)
+    })
+}
+else {
+    let ids = GetWatchlist();
+    ids.forEach(async (id) => {
+        let film = await GetFilmID(id);
+        let div = RenderFilm(film);
+        AddWatchlistFunction(div, id)
+    })
+}
