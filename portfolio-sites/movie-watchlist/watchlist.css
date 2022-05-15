@@ -1,0 +1,265 @@
+body, h1, h2, h3, h4, p{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* TEXT STYLING */
+
+h1{
+    font-size: 3rem;
+}
+
+p{
+    font-size: 1rem;
+}
+
+.t-small{
+    font-size: 0.8rem;
+}
+
+.t-big{
+    font-size: 1.5rem;
+}
+
+.t-grey{
+    color: #6B7280;
+}
+
+/* TEXT STYLING */
+
+/* DIV STYLING */
+
+header{
+    height: 300px;
+    width: 100%;
+    background-image: url("https://images.unsplash.com/photo-1628432136678-43ff9be34064?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=andre-tan-THJJRUhNlEc-unsplash.jpg&w=1920");
+    background-size: cover;
+    background-position: center -200px;
+    background-color: #0e0e0e;
+    filter: brightness(0.8);
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    z-index: -1;
+}
+
+.header-container{
+    width: 80%;
+    height: 300px;
+    margin: auto;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container h1{
+    transition: all 0.3s ease-in-out;
+}
+
+.bar{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+
+    transform: translateY(-67px);
+}
+
+.bar-buttons{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 99.5%;
+    height: 100%;
+
+    transform: translateY(8px);
+    z-index: -1;
+}
+
+.bar-buttons button{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #D1D5DB;
+    /* border: 5px solid green; */
+    border-radius: 8px;
+}
+
+.bar-buttons button:hover{
+    cursor: pointer;
+}
+
+.active-button{
+    background-color: #2aaff2;
+    border: 2px solid #D1D5DB;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.search-bar{
+    box-sizing: border-box;
+    
+    width: 100%;
+    height: 50px;
+
+    /*position: absolute;*/
+    left: 10%;
+    right: 10%;
+    /*transform: translate(0,-25px);*/
+
+
+    padding: 0px 0px 0px 1rem;
+
+    background-color: white;
+    border: 2px solid #D1D5DB;
+    /* border: 5px solid green; */
+    border-radius: 8px;
+    
+    display: flex;
+    justify-content: space-between;
+
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar img{
+    width: 32px;
+    margin-right: 10px;
+    align-self: center;
+}
+
+.search-bar input{
+    border: 0;
+    outline: 0;
+
+    width: 100%;
+    font-size: 1rem;
+}
+
+.search-bar button{
+    border: 0;
+    outline: 0;
+
+    width: 40%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-left: 2px solid #D1D5DB;
+}
+
+.search-bar button:hover{
+    cursor: pointer;
+}
+
+.film-section{
+    width: 100%;
+}
+
+.place-holder{
+    padding-top: 200px;
+}
+
+.place-holder img{
+    object-fit: cover;
+}
+
+.place-holder p{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    /* identical to box height, or 111% */
+    color: #DFDDDD;
+}
+
+.films-container{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.film{
+    width: 80%;
+    margin-bottom: 20px;
+    border: 1px #9ea5a8 solid;   
+    box-shadow: 8px 8px 4px #9ea5a8;
+
+    display: flex;
+}
+
+
+#film-id{
+    display: none;
+}
+
+.film > img{
+    width: auto;
+    height: 200px;
+    object-fit: cover;
+}
+
+.film-info{
+    width: 100%;
+    margin-left: 20px;
+    padding: 10px 0;
+}
+
+.film-info-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: 5px 0;
+}
+
+.film-info-title h2{
+    margin-right: 10px;
+}
+
+
+.film-info-title img{
+    margin-right: 10px;
+}
+
+.film-info-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 5px 0 10px 0;
+}
+
+.add-watchlist,
+.remove-watchlist{
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.add-watchlist:hover,
+.remove-watchlist:hover{
+    cursor: pointer;
+}
+
+.add-watchlist img,
+.remove-watchlist img{
+    margin-right: 10px;
+}
+
+.hidden{
+    display: none;
+}
+
+/* DIV STYLING */
+
+/* LINK STYLING */
+
+.link{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}

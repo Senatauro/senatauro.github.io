@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>FILMAÇO</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;800&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <div>
+            <header></header>
+            <div class="header-container">
+                <h1>Find your film</h1>
+                <a href="watchlist.html" class="link">Watchlist</a>
+            </div>
+        </div>
+
+        <div class="bar">
+            <div class="bar-buttons">
+                <button class="active-button" id="trending-btn">Trending</button>
+                <button id="top-rated-btn">Top Rated</button>
+                <button id="upcoming-btn">Upcoming</button>
+            </div>
+            <form class="search-bar" id="search-bar">
+                <img src="img/icons/search.png">
+                <label for="search-text"></label>
+                <input type="text" placeholder="Search by name" id="search-text" name="search-text">
+                <button id="search-film">Search</button>
+            </form>
+        </div>
+
+        <div class="film-section">
+            <!--
+            <div class="place-holder">
+                <img src="img/icons/film.png">
+                <p>Start exploring</p>
+            </div>
+            -->
+            
+            <div class="films-container" id="films-container">
+                <!--
+                <div class="film">
+                    <img src="${this.getFilmBannerURL()}" alt="Blade Runner movie poster">
+                    <div class="film-info">
+                        <div class="film-info-title">
+                            <h2>${this.title}</h2>
+                            <img src="img/icons/star.png">
+                            <p>${this.vote_average}</p>
+                        </div>
+                        <div class="film-info-data">
+                            <p class="t-small">${this.genres}</p>
+                            <div class="add-watchlist">
+                                <img src="img/icons/plus.png">
+                                <p class="t-small">Watchlist</p>
+                            </div>
+                            <div class="remove-watchlist">
+                                <img src="img/icons/subtract.png">
+                                <p class="t-small">remove</p>
+                            </div>
+                        </div>
+                        <div class="film-info-desc">
+                            <p>${this.overview}</p>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+
+            <!-- Pagination TODO-->
+
+        </div>
+        <script type="module" src="index.js"></script>
+    </body>
+</html>
